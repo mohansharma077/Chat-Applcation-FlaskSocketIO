@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat Application</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 400px;
+            margin-top: 150px;
+        }
+
+        .form-signin {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-signin h1 {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333333;
+        }
+
+        .form-signin label {
+            font-weight: bold;
+        }
+
+        .form-signin input {
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .form-signin button {
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-signin button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form class="form-signin" action="{{ url_for('chat') }}" method="POST">
+            <h1 class="h3 mb-3 font-weight-normal">Flask Chat Application</h1>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" class="form-control" placeholder="Enter your username" required autofocus>
+            </div>
+            <div class="form-group">
+                <label for="room">Room</label>
+                <input type="text" id="room" name="room" class="form-control" placeholder="Enter the room name" required>
+            </div>
+            <button class="btn btn-primary btn-block" type="submit">Start Chat</button>
+        </form>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
