@@ -9,7 +9,7 @@ app.config['SESSION_TYPE'] = 'filesystem'
 socketio = SocketIO(app, manage_session=False)
 Session(app)
 
-
+#test
 @app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('index.html')
